@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ola Mundo com NodeJS</title>
+</head>
+<body>
+<h1>Página inicial</h1>
+    <ul>
+        <% for (let index in clients) { %>
+        <% var clientName = clients[index].name; %>
+        <% var clientMail = clients[index].email; %>
+        <li><%= clientName %> - <%= clientMail %></li>
+        <% } %>
+    </ul>
+    <br>
+    <% if (erros) { %>
+        <ul>
+            <% for (var i in erros) { %>
+            <li><%= erros[i].msg %></li>
+            <% } %>
+        </ul>
+    <% } %>
+    <form action="/" method="post">
+        <input type="text" name="name" value="<%= datas.name %>" placeholder="Diga seu nome">
+        <input type="text" name="email" value="<%= datas.email %>" placeholder="Diga seu e-mail">
+        <button>Adicionar</button>
+    </form>
+</body>
+</html>
